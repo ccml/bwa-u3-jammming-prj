@@ -15,7 +15,7 @@ export class SearchBar extends Component {
 	/*
 	  The 'term' property of component state will contain the search criteria
 	*/
-	this.state = { term: undefined };
+	this.state = { term: "" };
     this.search = this.search.bind(this);
 	this.handleTermChange = this.handleTermChange.bind(this);
   }
