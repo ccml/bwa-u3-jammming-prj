@@ -15,9 +15,9 @@ export class SearchBar extends Component {
 	/*
 	  The 'term' property of component state will contain the search criteria
 	*/
-	this.state = { "term": undefined };
+	this.state = { term: undefined };
     this.search = this.search.bind(this);
-	this.handleTermChange =this.handleTermChange.bind(this);
+	this.handleTermChange = this.handleTermChange.bind(this);
   }
   
   /*
@@ -31,13 +31,13 @@ export class SearchBar extends Component {
     This method store the search criteria in the component state 
   */
   handleTermChange(e) {
-	this.setState({ "term": e.target.value });
+	this.setState({ term: e.target.value });
   }
   
   render() {
     return (
-		<div className="SearchBar" onChange={this.handleTermChange}>
-		  <input placeholder="Enter A Song, Album, or Artist" />
+		<div className="SearchBar">
+		  <input placeholder="Enter A Song, Album, or Artist" onChange={this.handleTermChange} />
 		  <a onClick={this.search}>SEARCH</a>
 		</div>
     );

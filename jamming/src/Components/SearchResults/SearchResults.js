@@ -14,7 +14,7 @@ export class SearchResults extends Component {
     return (
 		<div className="SearchResults">
 		  <h2>Results</h2>
-		  <TrackList tracks={this.props.searchResults} onAction={this.props.onAdd} mode="addTrack" />
+		  <TrackList tracks={this.props.searchResults} onAction={this.props.onAdd} actionText="+" />
 		</div>
     );
   }

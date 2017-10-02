@@ -7,9 +7,7 @@ import { Track } from '../Track/Track';
   Features
 	- Display a list of tracks
     - Each track will receive a callback to execute when the user click on the 
-	  action button. The apparence of the action button will be linked to the 
-	  'mode' property value.
-	  Possible value of 'mode' property are "addTrack" and "removeTrack"
+	  action button and the text to display in the button. 
 	  
 */
 export class TrackList extends Component {
@@ -21,7 +19,7 @@ export class TrackList extends Component {
 		  track => <Track key={track.id} 
 		                  track={track} 
 						  onAction={this.props.onAction} 
-						  mode={this.props.mode} />)}
+						  actionText={this.props.actionText} />)}
 		</div>
     );
   }

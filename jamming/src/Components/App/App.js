@@ -25,9 +25,9 @@ class App extends Component {
 		- playlistTracks : the list of track of the user playlist
 	*/
     this.state = {
-        "searchResults": [],
-        "playlistName": "",
-        "playlistTracks": []
+        searchResults: [],
+        playlistName: "New Playlist",
+        playlistTracks: []
     };
 	
     this.addTrack = this.addTrack.bind(this);
@@ -42,7 +42,7 @@ class App extends Component {
   */
   resetPlaylist() {
     this.setState({
-      "playlistName": "New Playlist",
+        playlistName: "New Playlist",
         playlistTracks: []
       }
     );
@@ -56,7 +56,7 @@ class App extends Component {
       var tracks = this.state.playlistTracks;
       tracks.push(track);
       this.setState( {
-          "playlistTracks": tracks
+          playlistTracks: tracks
       });
     }
   }
@@ -66,7 +66,7 @@ class App extends Component {
   */
   removeTrack(track) {
     this.setState( {
-        "playlistTracks" : this.state.playlistTracks.filter(item => item.id !== track.id)
+        playlistTracks : this.state.playlistTracks.filter(item => item.id !== track.id)
       });
   }
 
@@ -74,7 +74,7 @@ class App extends Component {
     This method store the playlist name in the component state 
   */
   updatePlayListName(name) {
-    this.setState( { "playlistName": name} );
+    this.setState( { playlistName: name} );
   }
 
   /*
@@ -94,9 +94,9 @@ class App extends Component {
     This method process a search matching a search criteria
   */
   search(term) {
-    Spotify.search(term).then( tracks => {
+    Promise.resolve(Spotify.search(term)).then( tracks => {
 	  // save the search result in the component state
-      this.setState({ "searchResults": tracks });
+      this.setState({ searchResults: tracks });
     });
   }
 

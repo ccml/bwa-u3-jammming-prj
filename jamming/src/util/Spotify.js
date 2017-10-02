@@ -1,6 +1,5 @@
-let clientid = "<your spotify client id>";
+let clientid = "dc58e607a7d947ebb6ecdab8ac9dd060";
 let redirectUrl = "http://localhost:3000";
-//let redirectUrl = "http://ccml.surge.sh";
 var accessToken = undefined;
 
 /*
