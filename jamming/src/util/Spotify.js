@@ -61,10 +61,10 @@ export let Spotify = {
       }
       return jsonResponse.tracks.items.map(track => {
         return {
-          "id": track.id,
-          "name": track.artists[0].name,
-          "album": track.album.name,
-          "uri": track.uri
+          id: track.id,
+          name: track.artists[0].name,
+          album: track.album.name,
+          uri: track.uri
         };
       })
     });
